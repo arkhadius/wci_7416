@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /ci_306
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [L]
+	
+	RewriteCond $1 !^(index\.php|images|robots\.txt)
+	Options All -Indexes
+</IfModule>
